@@ -142,7 +142,7 @@ function setupClaudeExporter() {
   document.body.appendChild(statusDiv);
 
   function updateStatus() {
-    statusDiv.textContent = `Question: ${humanMessages.length} | Claude: ${capturedResponses.length}`;
+    statusDiv.textContent = `Human: ${humanMessages.length} | Claude: ${capturedResponses.length}`;
   }
 
   // Returns copy buttons from action bars filtered by message type.
@@ -187,7 +187,7 @@ function setupClaudeExporter() {
     for (let i = 0; i < maxLength; i++) {
       if (i < humanMessages.length && humanMessages[i].content) {
         const ts = timestamps?.get(humanMessages[i].content?.trim());
-        const header = ts ? `## Human (${ts}):` : `## Human:`;
+        const header = ts ? `## Question (${ts}):` : `## Question:`;
         markdown += `${header}\n\n${humanMessages[i].content}\n\n---\n\n`;
       }
       if (i < capturedResponses.length) {
