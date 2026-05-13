@@ -142,7 +142,7 @@ function setupClaudeExporter() {
   document.body.appendChild(statusDiv);
 
   function updateStatus() {
-    statusDiv.textContent = `Human: ${humanMessages.length} | Claude: ${capturedResponses.length}`;
+    statusDiv.textContent = `Question: ${humanMessages.length} | Claude: ${capturedResponses.length}`;
   }
 
   // Returns copy buttons from action bars filtered by message type.
